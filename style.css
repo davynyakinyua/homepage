@@ -15,7 +15,6 @@ header {
     justify-content: center;
     align-items: center;
     height:80vh;
-    flex-wrap:wrap;
 }
 
 section {
@@ -83,10 +82,14 @@ nav {
     height:auto;
 }
 
-/* -------------------styles for main element---------------------*/
-.title, .content-box {
-    border:2px solid blue;
+/* styles for a mobile screen */
+@media (max-width: 320px){
+    header {
+        flex-direction:column;
+    }
 }
+
+/* -------------------styles for main element---------------------*/
 
 .content-box {
     width:25vw;
@@ -99,16 +102,19 @@ nav {
     
 }
 
-.screenshot, .description-container {
-    border:2px solid red;
-}
 
 .screenshot {
     height:60%;
+    text-align: center;
+    font-size:2.7rem;
+    padding:2rem;
+    display:flex;
+    align-items: center;
 }
 
 .description-container {
     height:40%;
+    box-shadow:5px 5px 5px silver;
 }
 
 /* style for svg in content box */
@@ -194,7 +200,6 @@ main {
 
 /* styles for icons in the content box */
 .icon-container {
-    border:2px solid purple;
     display:flex;
     justify-content: end;
     align-items: center;
@@ -207,4 +212,113 @@ main {
     color:#706e6d;
     display:flex;
     padding:0.5rem 0 1rem 1rem;
+}
+
+
+/*---------------------styles for the footer section---------------------------------*/
+footer {
+    display:flex;
+    height:70vh;
+    padding:2rem;
+    background-color:#0891b2;
+    margin-top:3rem;
+    gap:0.3rem;
+    justify-content: space-around;
+}
+
+
+.contacts {
+    width:40%;
+    height:75%;
+    display:flex;
+    flex-direction:column;
+    padding:0 3rem 0 3rem;
+    gap:0.3rem;
+    color:white;
+}
+
+.footer-image-container {
+    width:60%;
+}
+
+h3, .address, .phone-container, .email-container, .footer-links-container {
+    flex:auto;
+}
+
+
+h3 {
+    font-size:2rem;
+    display:flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.address {
+    font-weight:bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    padding:0.7rem;
+}
+
+.phone-container, .email-container {
+    display:grid;
+    grid-template-columns:15% 80%;
+    gap:5%;
+}
+
+.phone-icon , .email-icon {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-icon {
+    grid-column:1/2;
+}
+
+.phone-number {
+    grid-column:2/3;
+    font-weight:bold;
+}
+
+.email-icon {
+    grid-column:1/2;
+}
+
+.email {
+    grid-column:2/3;
+    font-weight:bold;
+}
+
+.phone-number, .email {
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    padding-left:0.3rem;
+}
+
+.footer-links-container {
+    display:flex;
+    width:60%;
+
+}
+
+.footer-icons {
+    flex:auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer-svg {
+    width:40%;
+}
+
+.phone-email {
+    width:50%;
 }
