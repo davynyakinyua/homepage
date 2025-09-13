@@ -148,9 +148,7 @@ nav {
 
 /* -------------------styles for main element---------------------*/
 
-.content-box {
-    width:25vw;
-}
+
 
 .title {
     font-size:2rem;
@@ -160,8 +158,30 @@ nav {
 }
 
 
+
+
+/* style for svg in content box */
+
+main {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    gap:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    justify-items: center;
+    height:100vh;
+}
+
+.content-box {
+    width:100%;
+    display:flex;
+    flex-direction:column;
+}
+
 .screenshot {
     height:60%;
+    flex:auto;
     text-align: center;
     font-size:2.7rem;
     padding:2rem;
@@ -172,12 +192,19 @@ nav {
 .description-container {
     height:40%;
     box-shadow:5px 5px 5px silver;
+    flex:auto;
+    display:flex;
+    flex-direction:column;
 }
 
-/* style for svg in content box */
-.git-link, .new-tab {
-    width:10%;
-    height:auto;
+/* styles for icons in the content box */
+.icon-container {
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    padding:0.5rem;
+    margin:0.3rem 0 0.3rem;
+    gap:0.3rem;
 }
 
 .heading {
@@ -185,15 +212,15 @@ nav {
     margin-right:auto;
 }
 
-main {
-    display:grid;
-    height:100vh;
-    grid-template-columns:repeat(3, 1fr);
-    grid-template-rows:repeat(2, 1fr);
-    gap:2rem;
-    padding-left:2rem;
-    padding-right:2rem;
-    justify-items: center;
+.git-link, .new-tab {
+    width:10%;
+}
+
+.description {
+    color:#706e6d;
+    display:flex;
+    padding:1rem;
+    flex:2 2 auto;
 }
 
 /* styles for grid items */
@@ -255,26 +282,13 @@ main {
     background-color:#4ba2d2;
 }
 
-/* styles for icons in the content box */
-.icon-container {
-    display:flex;
-    justify-content: end;
-    align-items: center;
-    padding:0.5rem;
-    margin:0.3rem 0 0.3rem;
-    gap:0.3rem;
-}
 
-.description {
-    color:#706e6d;
-    display:flex;
-    padding:0.5rem 0 1rem 1rem;
-}
+
+
 
 /* styles for mobile screen */
 @media (max-width: 767px){
     main {
-        height:100%;
         width:100vw;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
@@ -299,9 +313,6 @@ main {
         padding:0.3rem;
     }
 
-    .git-link, .new-tab {
-        flex:auto;
-    }
 
     .screenshot {
         justify-content: center;
@@ -347,17 +358,14 @@ main {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows:repeat(3, 1fr);
         width:90vw;
-        height:100%;
-        align-items:center;
-        justify-items: center;
-        border:3px solid purple;
-        padding:2rem;
+        padding:1rem;
     }
 
     .content-box {
-        border:2px solid blue;
-        width:30vw;
+        width:100%;
     }
+
+    
 
     .first-box {
         grid-column:1/2;
@@ -527,6 +535,14 @@ p {
 
     .contacts {
         flex:auto;
+    }
+
+    h3 {
+        font-size:3rem;
+    }
+
+    p {
+        font-size:1.2rem;
     }
 
     .footer-image-container {
