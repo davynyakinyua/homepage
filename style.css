@@ -7,12 +7,6 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.main-container {
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-}
 
 
 /* styles for  the header */
@@ -90,22 +84,25 @@ nav {
 
 /* styles for a mobile screen 767px and below */
 @media (max-width: 767px){
-    * {
-        font-size:0.9rem;
-        padding:0;
-        margin:0;
+
+
+    main {
+        height:100%;
     }
 
     header {
         flex-direction:column;
-        height:70vh;
+        width:100v;
+        height:100%;
         margin-bottom:4rem;
     }
 
     section {
-        width:80vw;
+        width:100vw;
         height:50vh;
         justify-content:end;
+        align-items:center;
+        padding:3rem;
     }
 
     .section-heading, .about-text, nav {
@@ -124,15 +121,29 @@ nav {
     }
 
     .about-text {
-        line-height: 1.3rem;
+        line-height: 2rem;
         flex:auto;
         margin:0.2rem;
     }
 
     .header-image-container {
         width:80%;
-        height:30vh;
+        height:50vh;
     }
+
+    .content-box {
+        max-width:90%;
+        aspect-ratio: 1/1;
+    }
+
+    .heading {
+        font-size: 4vw;
+    }
+
+    .description {
+        font-size: 3vw;
+    }
+
 
 }
 
@@ -141,8 +152,30 @@ nav {
     header {
         border:3px solid red;
         width:100vw;
+        position:relative;
+        height:60vh;
+        align-items:end;
     }
 
+    .header-image-container {
+        position:absolute;
+        height:auto;
+        top:10%;
+        right:52%;
+        width:41%;
+    }
+
+    section {
+        width:73%;
+        height:75%;
+    }
+
+    .author {
+        position:absolute;
+        top:20%;
+        left:80%;
+        width:100%;
+    }
 
 }
 
@@ -294,6 +327,8 @@ main {
         grid-template-rows: repeat(6, 1fr);
         justify-items: center;
         align-items:center;
+        height:100%;
+        margin-top:3rem;
     }
 
     .title {
@@ -348,6 +383,10 @@ main {
         grid-row:6/7;
     }
 
+        .description {
+            overflow:auto;
+            font-size:4vw;
+        }
     
 }
 
